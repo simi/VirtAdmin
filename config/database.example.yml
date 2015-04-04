@@ -1,0 +1,19 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: virtadmin4_development
+
+test:
+  <<: *default
+  database: virtadmin4_test
+
+production:
+  <<: *default
+  database: virtadmin4_production
+  username: <%= ENV['VIRTADMIN4_DATABASE_USERNAME'] %>
+  password: <%= ENV['VIRTADMIN4_DATABASE_PASSWORD'] %>
