@@ -1,3 +1,5 @@
+{<img src="https://gemnasium.com/f7698bd38ca0cd10ad57fd50dc5a915f.svg" alt="Dependency Status" />}[https://gemnasium.com/a6f04c9b9980f92ed4be682381341e84]
+
 == README
 
 This README would normally document whatever steps are necessary to get the
