@@ -13,6 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development do
   gem 'capistrano-rails'
   gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do
@@ -35,3 +37,5 @@ gem 'simple_form'
 gem 'slim-rails'
 
 gem 'ruby-libvirt'
+
+gem 'sorcery'
