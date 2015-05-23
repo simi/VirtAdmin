@@ -21,5 +21,6 @@ _theme
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
+config/settings.yml
 
 lib/geolite/GeoLite2-City.mmdb
