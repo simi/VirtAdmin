@@ -9,27 +9,25 @@ class ClientInfo
   def initialize(ip_address, browser)
     @ip_address = ip_address
     @browser = browser
+    @geo_lookup = lookup
   end
 
   def location
-    ret = lookup
-    return false unless lookup.found?
-    separator = ret.city.name.present? && ret.country.name.present? ? ', ' : ''
-    "#{ret.city.name}#{separator}#{ret.country.name}"
+    return false unless @geo_lookup
+    separator = city_name.present? && country_name.present? ? ', ' : ''
+    "#{city_name}#{separator}#{country_name}"
+  end
+
+  def city_name
+    @geo_lookup.try(:city).try(:name)
   end
 
   def country_name
-    ret = lookup
-    return false unless lookup.found?
-
-    ret.country.name.empty? ? false : ret.country.name
+    @geo_lookup.try(:country).try(:name)
   end
 
   def country_code
-    ret = lookup
-    return false unless lookup.found?
-
-    ret.country.iso_code.empty? ? false : ret.country.iso_code
+    @geo_lookup.try(:country).try(:country_code)
   end
 
   def browser
