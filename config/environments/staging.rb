@@ -80,4 +80,5 @@ Rails.application.configure do
   config.action_mailer.default_options = { from: Settings.mail.sender }
   config.action_mailer.default_url_options = { host: Settings.app.host }
   config.action_mailer.asset_host = "http://#{Settings.app.host}/"
+  config.action_mailer.smtp_settings = { enable_starttls_auto: false }
 end

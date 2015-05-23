@@ -13,10 +13,13 @@ mail:
   admin_address: 'info@company.inc'
 
 users:
-  manual_approval: true
+  manual_approval: true # Possible values: true, false 'auto'
 
 company:
   name: Company Inc
   phone: '(747) 302-0938'
   email: 'info@company.inc'
   web: 'https://company.inc/'
+
+geolite2:
+  path: 'lib/geolite/GeoLite2-City.mmdb'

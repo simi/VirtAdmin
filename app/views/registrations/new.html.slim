@@ -4,7 +4,7 @@
       = f.input :name
       = f.input :email
       = f.input :password
-      = f.input :country, priority: ['CZ', 'SK']
+      = f.input :country, prompt: @country ? false : t('registrations.labels.select_country')
 
       .form-group
         = raw t 'registrations.labels.terms_of_service',

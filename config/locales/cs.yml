@@ -71,3 +71,4 @@ cs:
     labels:
       terms_of_service: Odesláním registrace automaticky souhlasíte s %{tos_link}.
       terms_label: podmínkami provozu
+      select_country: Zvolte Vaší zemi

@@ -4,6 +4,8 @@ class RegistrationsController < ApplicationController
 
   def new
     @user = User.new
+    @country = ClientInfo.new(request.remote_ip, browser).country_code
+    @user.country = @country if @country
   end
 
   def create
