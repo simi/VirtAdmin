@@ -8,7 +8,9 @@ describe ClientInfo do
 
     it 'returns country based on IPv4 address' do
       skip_db_not_available unless @database_available
-      ClientInfo.new('77.75.76.3', nil).location.must_include 'Czech Republic'
+      info = ClientInfo.new('77.75.76.3', nil)
+      info.location.must_include 'Czech Republic'
+      info.country_code.must_equal 'CZ'
     end
 
     it 'returns country based on IPv6 address' do

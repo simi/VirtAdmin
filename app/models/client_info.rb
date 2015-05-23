@@ -27,7 +27,7 @@ class ClientInfo
   end
 
   def country_code
-    @geo_lookup.try(:country).try(:country_code)
+    @geo_lookup.try(:country).try(:iso_code)
   end
 
   def browser
