@@ -1,0 +1,34 @@
+en:
+  user_mailer:
+    login_success:
+      subject: Přihlášení do administračního rozhraní
+
+    login_failed:
+      subject: Chybné přihlášení
+
+    activation_needed:
+      subject: Ověření emailu
+
+    activation_success:
+      subject: Ověření emailu bylo úspěšné
+
+    reset_password:
+      subject: Nastavení nového hesla
+
+    new_password:
+      subject: Nastaveno nové heslo
+
+    unlock_token:
+      subject: ''
+
+    manual_approval_admin:
+      subject: ''
+
+    manual_approval_needed:
+      subject: ''
+
+    manual_approval_success:
+      subject: ''
+
+    manual_approval_denied:
+      subject: ''

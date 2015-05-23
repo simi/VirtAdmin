@@ -15,3 +15,11 @@
 config/database.yml
 config/secrets.yml
 _theme
+.csync_*
+.owncloudsync.log
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
+
+lib/geolite/GeoLite2-City.mmdb

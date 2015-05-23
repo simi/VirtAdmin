@@ -1,0 +1,28 @@
+/*
+ *= require jquery-ui
+ *= require theme/theme
+ *= require theme/updates
+ *= require theme/admin-forms
+*/
+
+body.external-page #main {
+  background: none;
+}
+
+body.external-page #content .admin-form {
+  max-width: 600px;
+}
+
+.admin-form .panel-virtio > .panel-heading {
+  border-top-color: #EF2D2A;
+
+}
+
+.admin-form .panel-virtio.heading-border:before,
+.admin-form .panel-virtio .heading-border:before {
+  background-color: #D71928;
+}
+
+.navbar-branding {
+  width: 247px;
+}

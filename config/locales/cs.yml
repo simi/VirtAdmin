@@ -1,0 +1,73 @@
+cs:
+  general:
+    "yes": Ano
+    "no": Ne
+
+  menu:
+    menu: MENU
+    dashboard: Dashboard
+    logout: Odhlásit se
+
+  sessions:
+    labels:
+      email: Email
+      password: Heslo
+      new_password: Nové heslo
+      new_password_confirmation: Zopakujte nové heslo
+
+    placeholders:
+      email: Váš email
+      password: Zadejte heslo
+      new_password: Zadejte Vaše nové heslo
+      new_password_confirmation: Zopakujte nové heslo
+
+    buttons:
+      forgotten_password: Zapomenuté heslo?
+      log_in: Přihlásit se
+      remember_me: Zapamatovat si přihlášení
+      reset: Reset
+      language: Switch to English
+      save: Uložit
+      back: Zpět
+
+    errors:
+      wrong_password: Zadané přihlašovací údaje jsou chybné.
+      login_first: Pro zobrazení této stránky je třeba se přihlásit.
+      not_approved: Váš uživatelský účet zatím nebyl schválen. Vyčkejte prosím na schválení, které Vám bude oznámeno emailem.
+
+    notices:
+      login_successful: Přihlášení proběhlo v pořádku.
+      logout_successful: Odhlášení proběhlo v pořádku.
+
+  reset_passwords:
+    labels:
+      instructions: Instrukce pro nastavení nového hesla budou odeslány na Váš email.
+
+    buttons:
+      submit: 'Změnit heslo'
+
+    errors:
+      wrong_email: Zadaný email není platný.
+      wrong_token: Token není správný a nebo vypršela jeho platnost.
+
+    notices:
+      password_sent: Email s instrukcemi byl odeslán na Vaši adresu.
+      password_changed: Vaše heslo bylo změněno. Nyní se můžete přihlásit.
+
+  registrations:
+    buttons:
+      new: Nejste uživatelem? Zaregistrujte se!
+      submit: Odeslat registraci
+
+    notices:
+      create: Vaše registrace byla v pořádku přijata. Zkontrolujte Vaší poštu pro další instrukce.
+      already_registered: Nelze vytvořit novou registraci, pokud je uživatel přihlášen.
+      activate: Váš email byl v pořádku ověřen, děkujeme. Nyní se můžete přihlásit.
+      manual_approval_needed: Váš email byl v pořádku ověřen, děkujeme. Nyní prosím vyčkejte na schválení účtu našimi administrátory.
+
+    errors:
+      wrong_token: Token není správný a nebo vypršela jeho platnost.
+
+    labels:
+      terms_of_service: Odesláním registrace automaticky souhlasíte s %{tos_link}.
+      terms_label: podmínkami provozu

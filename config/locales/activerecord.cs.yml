@@ -1,0 +1,8 @@
+cs:
+  attributes:
+    password: Heslo
+    password_confirmation: Zopakujte heslo
+    name: Vaše celé jméno
+    email: Email
+    country: Země
+    submit: Uložit

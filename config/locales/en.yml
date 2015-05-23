@@ -1,23 +1,54 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  general:
+    "yes": Ano
+    "no": Ne
+
+  sessions:
+    labels:
+      email: Email
+      password: Password
+      new_password: Nové heslo
+      new_password_confirmation: Zopakujte nové heslo
+
+    placeholders:
+      email: Váš email
+      password: Zadejte heslo
+      new_password: Zadejte Vaše nové heslo
+      new_password_confirmation: Zopakujte nové heslo
+
+    buttons:
+      forgotten_password: Zapomenuté heslo?
+      log_in: Přihlásit se
+      remember_me: Zapamatovat si přihlášení
+      reset: Reset
+      language: Přepnout do Češtiny
+      save: Uložit
+      back: Zpět
+
+    errors:
+      wrong_password: Zadané přihlašovací údaje jsou chybné.
+      login_first: Je třeba se přihlásit.
+
+    notices:
+      login_successful: Přihlášení proběhlo v pořádku.
+      logout_successful: Odhlášení proběhlo v pořádku.
+
+  reset_passwords:
+    labels:
+      instructions: Instrukce pro nastavení nového hesla budou odeslány na Váš email.
+
+    buttons:
+      submit: 'Odeslat'
+
+    errors:
+      wrong_email: Zadaný email není platný.
+      wrong_token: Token není správný a nebo vypršela jeho platnost.
+
+    notices:
+      password_sent: Email s instrukcemi byl odeslán na Vaši adresu.
+      password_changed: Vaše heslo bylo změněno. Nyní se můžete přihlásit.
+
+  menu:
+    menu: MENU
+    dashboard: Dashboard
+    logout: Odhlásit se

@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+
+    title= Settings.app.name
+
+    meta name='keywords' content=Settings.app.keywords
+    meta name='description' content=Settings.app.description
+    meta name='author' content=Settings.company.name
+    meta name='viewport' content='width=device-width, initial-scale=1.0'
+
+    link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'
+    link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300"
+
+    link rel='icon' type='image/png' href='/icon_195px.png'
+    link rel='apple-touch-icon-precomposed' href='/icon_72px.png'
+    link rel='icon' type='image/png' href='/icon_16px.png'
+
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+    = csrf_meta_tags
+
+    /[if lt IE 9]
+      = javascript_include_tag 'compatibility/html5shiv.js'
+      = javascript_include_tag 'compatibility/respond.min.js'
+
+  body class="#{yield :body_class}"
+    #main
+      = render 'layouts/top_navbar'
+      = render 'layouts/left_sidebar'
+
+      section#content_wrapper
+        #content
+          = render 'layouts/flash_messages'
+
+          = yield
+
+      = render 'layouts/right_sidebar'
+
+  = javascript_include_tag 'theme/utility/utility'
+  = javascript_include_tag 'theme/main'
+
+  javascript:
+    jQuery(document).ready(function () {
+      "use strict";
+      Core.init();
+    });

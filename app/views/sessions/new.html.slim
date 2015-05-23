@@ -1,0 +1,32 @@
+= extends :no_login do
+  = form_tag sessions_path do |f|
+    .panel-body.bg-light.p30
+      .row
+        .col-sm-12.pr30
+          .section
+            = label_tag :email, t('sessions.labels.email'), class: 'field-label text-muted fs18 mb10'
+            = label_tag :email, class: 'field prepend-icon' do
+              = email_field_tag :email, params[:email], placeholder: t('sessions.placeholders.email'), required: true,
+                                class: 'gui-input'
+              = label_tag :email, class: 'field-icon' do
+                i.fa.fa-envelope
+
+          .section
+            = label_tag :password, t('sessions.labels.password'), class: 'field-label text-muted fs18 mb10'
+            = label_tag :password, class: 'field prepend-icon' do
+              = password_field_tag :password, nil, placeholder: t('sessions.placeholders.password'), required: true,
+                                   class: 'gui-input'
+              = label_tag :password, class: 'field-icon' do
+                i.fa.fa-lock
+            .pt5
+              = link_to t('sessions.buttons.forgotten_password'), new_reset_password_path
+
+    .panel-footer.clearfix.p10.ph15
+      = button_tag t('sessions.buttons.log_in'), class: 'btn btn-primary mr10 pull-right'
+      label.switch.block.switch-primary.pull-left.input-align.mt10
+        = check_box_tag :remember_me, 1, true
+        = label_tag :remember_me, '', 'data-off' => t('general.no'), 'data-on' => t('general.yes')
+        span= t 'sessions.buttons.remember_me'
+
+  - replace :links do
+    strong= link_to t('registrations.buttons.new'), new_registration_path

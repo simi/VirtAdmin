@@ -1,0 +1,19 @@
+= extends :no_login do
+  = form_tag reset_passwords_path do |f|
+    .panel-body.bg-light.p30
+      .alert.alert-micro.alert-border-left.alert-info.pastel.mn
+        i.fa.fa-info.pr10
+        = t 'reset_passwords.labels.instructions'
+
+    .panel-footer.p25.pv15
+      .row
+        .col-md-12
+          .section.mn
+            .smart-widget.sm-right.smr-80
+              label.field.prepend-icon
+                = email_field_tag :email, params[:email], placeholder: t('sessions.placeholders.email'),
+                                  required: true, class: 'gui-input'
+                = label_tag :email, class: 'field-icon' do
+                  i.fa.fa-envelope
+
+              = button_tag t('reset_passwords.buttons.submit'), class: 'button btn-primary'

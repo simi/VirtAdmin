@@ -1,0 +1,17 @@
+= extends :no_login do
+  = simple_form_for @user, url: registrations_path, wrapper: :admin_form do |f|
+    .panel-body.bg-light.p30
+      = f.input :name
+      = f.input :email
+      = f.input :password
+      = f.input :country, priority: ['CZ', 'SK']
+
+      .form-group
+        = raw t 'registrations.labels.terms_of_service',
+                tos_link: link_to(t('registrations.labels.terms_label'), t('links.tos'), target: '_blank')
+
+    .panel-footer.p25.pv15
+      .row
+        .col-md-12
+          .section.mn
+            = f.submit t('registrations.buttons.submit'), class: 'btn btn-success mr10 pull-right'

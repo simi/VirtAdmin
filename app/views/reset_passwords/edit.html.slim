@@ -1,0 +1,11 @@
+= extends :no_login do
+  = simple_form_for @user, url: reset_password_path(params[:id]), wrapper: :admin_form do |f|
+    .panel-body.bg-light.p30
+      = f.input :password
+      = f.input :password_confirmation
+
+    .panel-footer.p25.pv15
+      .row
+        .col-md-12
+          .section.mn
+            = f.submit t('reset_passwords.buttons.submit'), class: 'btn btn-primary mr10 pull-right'

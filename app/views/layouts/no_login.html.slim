@@ -1,0 +1,21 @@
+- content_for :body_class, 'external-page sb-l-c sb-r-c'
+
+- replace :top_navbar, nil
+- replace :left_sidebar, nil
+- replace :right_sidebar, nil
+
+.admin-form.theme-info
+  .panel.panel-virtio.mt10.br-n
+    .panel-heading.heading-border.bg-white
+      .section.row.mn
+        .col-sm-12
+          = image_tag 'logo_392x110px.png', alt: 'Logo', class: 'img-responsive center-block'
+
+    = yield
+
+  .row.mbb15.table-layout
+    .col-xs-6.va-m.pln
+      = area :links do
+        strong= link_to t('sessions.buttons.back'), login_path
+    .col-xs-6.va-m.pln
+      strong= locale_link

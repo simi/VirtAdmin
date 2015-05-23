@@ -1,0 +1,13 @@
+= area :left_sidebar do
+  aside#sidebar_left.nano.nano-primary
+    .nano-content
+      ul.nav.sidebar-menu
+        li.sidebar-label.pt20= t 'menu.menu'
+        li.active
+          = link_to dashboard_path do
+            span.glyphicons.glyphicons-home
+            span.sidebar-title= t 'menu.dashboard'
+        li
+          = link_to logout_path do
+            span.fa.fa-sign-out
+            span.sidebar-title= t 'menu.logout'

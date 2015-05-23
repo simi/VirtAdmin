@@ -1,0 +1,5 @@
+en:
+  attributes:
+    password: Password
+    password_confirmation: Confirm password
+    submit: Save

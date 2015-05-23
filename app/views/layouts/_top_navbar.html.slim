@@ -1,0 +1,12 @@
+= area :top_navbar do
+  header.navbar.navbar-fixed-top.bg-light
+    .navbar-branding
+      = link_to dashboard_path, class: 'navbar-brand' do
+        .pt3
+          = image_tag 'logo_168x50px.png', alt: 'Virt.io Logo'
+
+      span id='toggle_sidemenu_l' class='glyphicons glyphicons-show_lines'
+        ul class='nav navbar-nav pull-right hidden'
+          li
+            a href='#' class='sidebar-menu-toggle'
+              span class='octicon octicon-ruby fs20 mr10 pull-right'

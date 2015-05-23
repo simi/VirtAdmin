@@ -1,0 +1,34 @@
+cs:
+  user_mailer:
+    login_success:
+      subject: Přihlášení do administračního rozhraní
+
+    login_failed:
+      subject: '[Důležité] Chybné přihlášení'
+
+    activation_needed:
+      subject: '[Důležité] Ověření emailu'
+
+    activation_success:
+      subject: Ověření emailu bylo úspěšné
+
+    reset_password:
+      subject: Nastavení nového hesla
+
+    new_password:
+      subject: '[Důležité] Heslo změněno'
+
+    unlock_token:
+      subject: ''
+
+    manual_approval_admin:
+      subject: '[Důležité] Nový zákazník - Je potřeba schválit registraci'
+
+    manual_approval_needed:
+      subject: '[Důležité] Dodatečné schválení administrátory'
+
+    manual_approval_success:
+      subject: 'Vaše registrace byla schválena'
+
+    manual_approval_denied:
+      subject: '[Důležité] Vaše registrace byla zamítnuta'
