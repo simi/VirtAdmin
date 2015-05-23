@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
     activation_state == 'active'
   end
 
+  def approve!
+    update_attribute :approved, true
+  end
+
   def self.load_from_activation_token(token)
     user = super token
     User.find_by(activation_token: token).try(:destroy) unless user

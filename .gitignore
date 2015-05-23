@@ -24,3 +24,7 @@ config/environments/*.local.yml
 config/settings.yml
 
 lib/geolite/GeoLite2-City.mmdb
+
+Capfile
+config/deploy.rb
+config/deploy/*
