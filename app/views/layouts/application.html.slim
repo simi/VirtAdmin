@@ -17,7 +17,6 @@ html
     link rel='apple-touch-icon-precomposed' href='/icon_72px.png'
     link rel='icon' type='image/png' href='/icon_16px.png'
 
-
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
@@ -44,7 +43,6 @@ html
   = javascript_include_tag 'theme/main'
 
   javascript:
-    jQuery(document).ready(function () {
-      "use strict";
+    $(document).on('ready page:load', function () {
       Core.init();
     });

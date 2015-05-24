@@ -7,7 +7,9 @@ module ApplicationHelper
     alert_class = case key.to_sym
                   when :notice
                     'success'
-                  when [:alert, :error]
+                  when :alert
+                    'danger'
+                  when :error
                     'danger'
                   when :warning
                     'warning'
@@ -24,7 +26,9 @@ module ApplicationHelper
                    'check'
                  when :warning
                    'warning'
-                 when [:error, :alert]
+                 when :error
+                   'remove'
+                 when :alert
                    'remove'
                  else
                    'info'
