@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :setup_locale, except: [:change_locale]
   around_action :setup_time_zone
   before_action :require_login, except: [:change_locale, :setup_time_zone]
+  before_action :check_maintenance_mode
 
   def change_locale
     I18n.locale = params[:locale].to_sym
@@ -17,7 +18,7 @@ class ApplicationController < ActionController::Base
   private
 
   def ssl_configured?
-    Rails.env.production?
+    Rails.env.production? || Rails.env.staging?
   end
 
   def not_authenticated
@@ -39,5 +40,15 @@ class ApplicationController < ActionController::Base
   def setup_time_zone(&block)
     time_zone = current_user.try(:time_zone) || Settings.app.default_time_zone
     Time.use_zone(time_zone, &block)
+  end
+
+  def check_maintenance_mode
+    return true unless current_user
+    return true if current_user.admin?
+    return true unless Settings.app.maintenance_mode
+
+    logout
+    flash[:info] = t 'sessions.notices.logout_maintenance_mode'
+    redirect_to maintenance_path
   end
 end

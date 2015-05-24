@@ -1,0 +1,9 @@
+= extends :no_login do
+  .panel-footer.clearfix.p10.ph15
+    .alert.alert-micro.alert-border-left.alert-warning.pastel.mn
+      i.fa.fa-info.pr10
+      = t 'sessions.labels.maintenance_mode'
+
+  - replace :links do
+    strong
+      = link_to t('sessions.buttons.maintenance_login'), login_path(admin: true)

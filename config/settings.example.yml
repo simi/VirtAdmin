@@ -7,6 +7,8 @@ app:
   default_locale: 'en'
   default_time_zone: 'UTC' # Run "rake time:zones:all" for a list of time zones.
 
+  maintenance_mode: false
+
 mail:
   sender: 'Company Inc <info@company.inc>'
   subject_prefix: '[Company Inc]'

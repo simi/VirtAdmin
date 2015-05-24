@@ -46,7 +46,7 @@ describe SessionsController do
       flash[:info].must_equal I18n.t 'sessions.notices.logout_successful'
     end
 
-    it 'will not login not yet approved user' do
+    it 'will not login when not approved' do
       @user.update_attribute :approved, false
 
       log_in
@@ -54,8 +54,8 @@ describe SessionsController do
       session[:user_id].must_be_nil
     end
 
-    it 'will not login not yet activated user' do
-      @user.update_attribute :approved, true
+    it 'will not login when not activated' do
+      @user.approve!
       @user.update_attribute :activation_state, 'pending'
       @user.wont_be :activated?
 
@@ -64,6 +64,36 @@ describe SessionsController do
         flash[:alert].must_equal I18n.t 'sessions.errors.wrong_password'
         session[:user_id].must_be_nil
       end.wont_change 'ActionMailer::Base.deliveries.count'
+    end
+
+    it 'will not login when blocked' do
+      @user.block!
+      @user.must_be :blocked?
+
+      log_in
+      flash[:alert].must_equal I18n.t 'sessions.errors.blocked'
+      session[:user_id].must_be_nil
+    end
+  end
+
+  describe 'in maintenance mode' do
+    it 'will not let user log in' do
+      Settings.app.maintenance_mode = true
+      @user.update_attribute :admin, false
+
+      log_in
+      must_redirect_to maintenance_path
+      flash[:info].must_equal I18n.t 'sessions.errors.maintenance_mode'
+      session[:user_id].must_be_nil
+    end
+
+    it 'will let admin log in' do
+      Settings.app.maintenance_mode = true
+      @user.update_attribute :admin, true
+
+      log_in
+      flash[:notice].must_equal I18n.t 'sessions.notices.login_successful'
+      must_redirect_to dashboard_path
     end
   end
 end

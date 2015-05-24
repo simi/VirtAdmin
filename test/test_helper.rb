@@ -5,13 +5,17 @@ require 'minitest/reporters'
 require 'minitest/rails'
 require 'minitest/rails/capybara'
 require 'support/mailer_helper.rb'
+require 'support/sessions_helper.rb'
 
 Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
-
-I18n.locale = :cs
 
 module ActiveSupport
   class TestCase
     ActiveRecord::Migration.check_pending!
+
+    before do
+      I18n.locale = :cs
+      Settings.app.maintenance_mode = false
+    end
   end
 end

@@ -14,6 +14,7 @@ cs:
       password: Heslo
       new_password: Nové heslo
       new_password_confirmation: Zopakujte nové heslo
+      maintenance_mode: Omlouváme se, ale právě probíhá údržba systému a není možné se přihlásit.
 
     placeholders:
       email: Váš email
@@ -29,15 +30,19 @@ cs:
       language: Switch to English
       save: Uložit
       back: Zpět
+      maintenance_login: Přihlášení pro administrátory
 
     errors:
       wrong_password: Zadané přihlašovací údaje jsou chybné.
       login_first: Pro zobrazení této stránky je třeba se přihlásit.
       not_approved: Váš uživatelský účet zatím nebyl schválen. Vyčkejte prosím na schválení, které Vám bude oznámeno emailem.
+      blocked: Nelze se přihlásit, protože Váš uživatelský účet je zablokován.
+      maintenance_mode: Nezle se přihlásit, protože probíhá údržba systému.
 
     notices:
-      login_successful: Přihlášení proběhlo v pořádku.
+      login_successful: Přihlášení proběhlo v pořádku. Vítejte!
       logout_successful: Odhlášení proběhlo v pořádku.
+      logout_maintenance_mode: Omlouváme se, ale právě probíhá údržba systému.
 
   reset_passwords:
     labels:

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   get 'login', controller: :sessions, action: :new
   get 'logout', to: 'sessions#destroy', as: :logout
+  get 'maintenance', to: 'sessions#maintenance', as: :maintenance
 
   resources :reset_passwords, except: [:index, :destroy, :show]
   get 'reset_password', controller: :reset_passwords, action: :new, as: :new_password
