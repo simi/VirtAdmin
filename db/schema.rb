@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518130037) do
+ActiveRecord::Schema.define(version: 20150524073542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(version: 20150518130037) do
     t.string   "time_zone",                       default: "Prague"
     t.boolean  "approved",                        default: false
     t.boolean  "admin",                           default: false
+    t.string   "street"
+    t.string   "city"
+    t.string   "zip"
+    t.string   "phone"
+    t.string   "contact_person"
+    t.string   "skype"
+    t.string   "jabber"
+    t.string   "billing_emails"
+    t.string   "company_number"
+    t.string   "vat_number"
+    t.boolean  "blocked",                         default: false
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

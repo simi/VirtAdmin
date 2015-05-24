@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true, presence: true
   validates :email, :name, :country, :locale, :time_zone, presence: true
 
+  scope :by_country, -> (country) { where country: country }
+  scope :by_locale, -> (locale) { where locale: locale }
+
   def change_locale!(new_locale)
     update_attribute :locale, new_locale
   end
@@ -19,6 +22,14 @@ class User < ActiveRecord::Base
 
   def approve!
     update_attribute :approved, true
+  end
+
+  def block!
+    update_attribute :blocked, true
+  end
+
+  def unblock!
+    update_attribute :blocked, false
   end
 
   def self.load_from_activation_token(token)
