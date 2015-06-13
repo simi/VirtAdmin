@@ -75,7 +75,11 @@ class User < ActiveRecord::Base
   end
 
   def approve!
-    update_attribute :approved, true
+    update_attribute(:approved, true) unless approved?
+  end
+
+  def disapprove!
+    update_attribute(:approved, false) if approved?
   end
 
   def block!

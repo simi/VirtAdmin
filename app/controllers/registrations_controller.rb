@@ -21,6 +21,7 @@ class RegistrationsController < ApplicationController
     end
   end
 
+  # TODO: Extract to service object
   def activate
     user = User.load_from_activation_token(params[:id])
 
@@ -31,9 +32,7 @@ class RegistrationsController < ApplicationController
 
     user.activate!
 
-    unless user.approved?
-      UserMailer.manual_approval_admin(user).deliver_later
-      UserMailer.manual_approval_needed(user).deliver_later
+    unless ApproveUserService.new(user).approve
       flash[:info] = t 'registrations.notices.manual_approval_needed'
       redirect_to login_path
       return

@@ -4,6 +4,8 @@ describe RegistrationsController do
   include MailerHelper
 
   before do
+    Settings.users.manual_approval = true
+
     @user = FactoryGirl.create :user
     @user.update_columns activation_state: 'pending', activation_token: Faker::Lorem.characters(15)
   end
@@ -19,6 +21,8 @@ describe RegistrationsController do
   end
 
   it 'activates already registered user' do
+    Settings.users.manual_approval = false
+
     lambda do
       get :activate, id: @user.activation_token
     end.must_change 'ActionMailer::Base.deliveries.count'

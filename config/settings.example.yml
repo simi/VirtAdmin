@@ -16,7 +16,23 @@ mail:
   to_all_admins: true
 
 users:
-  manual_approval: true # Possible values: true, false 'auto'
+  manual_approval: auto # Possible values: true, false, auto
+  defaults:
+    suspicious_names:
+      - john doe
+      - admin
+      - administrator
+      - root
+      - john appleseed
+      - bill gates
+      - tim cook
+      - steve jobs
+      - webmaster
+      - hostmaser
+
+    suspicious_countries:
+    suspicious_ip_addresses:
+    suspicious_emails:
 
 company:
   name: Company Inc

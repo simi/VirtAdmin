@@ -24,6 +24,8 @@ describe ClientInfo do
       ClientInfo.new('127.0.0.1', nil).location.wont_equal true
     end
 
+    private
+
     def skip_db_not_available
       skip 'MaxMind GeoLite2 database is not available'
     end
