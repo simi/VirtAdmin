@@ -3,7 +3,13 @@
  *= require theme/theme
  *= require theme/updates
  *= require theme/admin-forms
-*/
+ */
+
+
+$nprogress-color: #EF2D2A;
+
+@import 'nprogress';
+@import 'nprogress-bootstrap';
 
 body.external-page #main {
   background: inherit;
@@ -25,4 +31,9 @@ body.external-page #content .admin-form {
 
 .navbar-branding {
   width: 247px;
+}
+
+div#footnotes_debug {
+  margin: inherit;
+  position: relative;
 }

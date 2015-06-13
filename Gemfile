@@ -12,6 +12,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'nprogress-rails'
 
 group :development do
   gem 'capistrano-rails'
@@ -23,6 +24,8 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rubocop', require: false
+
+  gem 'rails-footnotes'
 end
 
 group :development, :test do

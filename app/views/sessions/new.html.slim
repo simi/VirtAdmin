@@ -22,7 +22,7 @@
               = link_to t('sessions.buttons.forgotten_password'), new_reset_password_path
 
     .panel-footer.clearfix.p10.ph15
-      = button_tag t('sessions.buttons.log_in'), class: 'btn btn-primary mr10 pull-right'
+      = submit_tag t('sessions.buttons.log_in'), class: 'btn btn-primary mr10 pull-right'
       label.switch.block.switch-primary.pull-left.input-align.mt10
         = check_box_tag :remember_me, 1, true
         = label_tag :remember_me, '', 'data-off' => t('general.no'), 'data-on' => t('general.yes')

@@ -507,6 +507,8 @@ var Core = function (options) {
     return {
         init: function (options) {
 
+            Body = $('body');
+
             // Set Default Options
             var defaults = {
                 sbl: "sb-l-o", // sidebar left open onload
