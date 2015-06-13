@@ -32,6 +32,7 @@ class RegistrationsController < ApplicationController
     user.activate!
 
     unless user.approved?
+      UserMailer.manual_approval_admin(user).deliver_later
       UserMailer.manual_approval_needed(user).deliver_later
       flash[:info] = t 'registrations.notices.manual_approval_needed'
       redirect_to login_path

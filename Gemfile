@@ -26,6 +26,7 @@ group :development do
   gem 'rubocop', require: false
 
   gem 'rails-footnotes'
+  gem 'annotate'
 end
 
 group :development, :test do

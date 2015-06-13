@@ -13,6 +13,7 @@ mail:
   sender: 'Company Inc <info@company.inc>'
   subject_prefix: '[Company Inc]'
   admin_address: 'info@company.inc'
+  to_all_admins: true
 
 users:
   manual_approval: true # Possible values: true, false 'auto'

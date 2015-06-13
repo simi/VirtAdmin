@@ -3,61 +3,97 @@ class UserMailer < ApplicationMailer
 
   def login_success(user)
     @user = user
-    mail to: @user.email
+
+    I18n.with_locale(@user.locale) do
+      mail to: @user.email
+    end
   end
 
   def login_failed(user)
     @user = user
-    mail to: @user.email
+
+    I18n.with_locale(@user.locale) do
+      mail to: @user.email
+    end
   end
 
   def activation_needed(user)
     @user = user
-    @activation_url = activate_registration_url(user)
-    mail to: @user.email
+    @activation_url = activate_registration_url(user.activation_token)
+
+    I18n.with_locale(@user.locale) do
+      mail to: @user.email
+    end
   end
 
   def activation_success(user)
     @user = user
-    mail to: @user.email
+
+    I18n.with_locale(@user.locale) do
+      mail to: @user.email
+    end
   end
 
   def manual_approval_admin(user)
     @user = user
-    mail to: Settings.mail.admin_address, from: user_to_email(@user)
+
+    emails = Settings.mail.admin_address
+    if Settings.mail.to_all_admins
+      emails = User.admins.pluck(:email).push emails
+    end
+
+    mail to: emails, from: user_to_email(@user)
   end
 
   def manual_approval_needed(user)
     @user = user
-    mail to: @user.email
+
+    I18n.with_locale(@user.locale) do
+      mail to: @user.email
+    end
   end
 
   def manual_approval_success(user)
     @user = user
-    mail to: @user.email
+
+    I18n.with_locale(@user.locale) do
+      mail to: @user.email
+    end
   end
 
   def manual_approval_denied(user)
     @user = user
-    mail to: @user.email
+
+    I18n.with_locale(@user.locale) do
+      mail to: @user.email
+    end
   end
 
   def reset_password(user)
     @user = user
     @reset_url = edit_reset_password_url(@user.reset_password_token)
-    mail to: @user.email
+
+    I18n.with_locale(@user.locale) do
+      mail to: @user.email
+    end
   end
 
   def new_password(user, client_info, date_time)
     @user = user
     @client_info = client_info
     @date_time = date_time
-    mail to: @user.email
+
+    I18n.with_locale(@user.locale) do
+      mail to: @user.email
+    end
   end
 
   def unlock_token(user)
     @user = user
-    mail to: @user.email
+
+    I18n.with_locale(@user.locale) do
+      mail to: @user.email
+    end
   end
 
   private

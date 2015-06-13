@@ -10,7 +10,7 @@ feature 'Login' do
   scenario 'ordinary visitor is unable to display certain pages without login' do
     visit dashboard_path
     page.must_have_content I18n.t 'sessions.errors.login_first'
-    page.must_have_content I18n.t 'sessions.buttons.log_in'
+    current_path.must_equal login_path
   end
 
   scenario 'existing user can log in and display dashboard' do

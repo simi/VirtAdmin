@@ -28,13 +28,14 @@ class ApplicationController < ActionController::Base
 
   def setup_locale
     I18n.locale = if current_user.try(:locale)
-                    cookies[:locale] = current_user.locale
-                    current_user.locale.to_sym
+                    current_user.locale
                   elsif cookies[:locale].present?
                     cookies[:locale].to_sym
                   else
                     Settings.app.default_locale.to_sym
                   end
+
+    cookies[:locale] = I18n.locale
   end
 
   def setup_time_zone(&block)

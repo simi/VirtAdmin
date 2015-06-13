@@ -41,7 +41,7 @@ describe RegistrationsController do
 
     lambda do
       get :activate, id: @user.activation_token
-    end.must_change 'ActionMailer::Base.deliveries.count', +2
+    end.must_change 'ActionMailer::Base.deliveries.count', +3
 
     latest_email_subject.must_include I18n.t 'user_mailer.manual_approval_needed.subject'
     flash[:info].must_equal I18n.t 'registrations.notices.manual_approval_needed'

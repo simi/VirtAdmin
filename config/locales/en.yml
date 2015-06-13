@@ -3,12 +3,18 @@ en:
     "yes": Ano
     "no": Ne
 
+  menu:
+    menu: MENU
+    dashboard: Dashboard
+    logout: Odhlásit se
+
   sessions:
     labels:
       email: Email
-      password: Password
+      password: Heslo
       new_password: Nové heslo
       new_password_confirmation: Zopakujte nové heslo
+      maintenance_mode: Omlouváme se, ale právě probíhá údržba systému a není možné se přihlásit.
 
     placeholders:
       email: Váš email
@@ -24,21 +30,26 @@ en:
       language: Přepnout do Češtiny
       save: Uložit
       back: Zpět
+      maintenance_login: Přihlášení pro administrátory
 
     errors:
       wrong_password: Zadané přihlašovací údaje jsou chybné.
-      login_first: Je třeba se přihlásit.
+      login_first: Pro zobrazení této stránky je třeba se přihlásit.
+      not_approved: Váš uživatelský účet zatím nebyl schválen. Vyčkejte prosím na schválení, které Vám bude oznámeno emailem.
+      blocked: Nelze se přihlásit, protože Váš uživatelský účet je zablokován.
+      maintenance_mode: Nezle se přihlásit, protože probíhá údržba systému.
 
     notices:
-      login_successful: Přihlášení proběhlo v pořádku.
+      login_successful: Přihlášení proběhlo v pořádku. Vítejte!
       logout_successful: Odhlášení proběhlo v pořádku.
+      logout_maintenance_mode: Omlouváme se, ale právě probíhá údržba systému.
 
   reset_passwords:
     labels:
       instructions: Instrukce pro nastavení nového hesla budou odeslány na Váš email.
 
     buttons:
-      submit: 'Odeslat'
+      submit: 'Změnit heslo'
 
     errors:
       wrong_email: Zadaný email není platný.
@@ -48,7 +59,21 @@ en:
       password_sent: Email s instrukcemi byl odeslán na Vaši adresu.
       password_changed: Vaše heslo bylo změněno. Nyní se můžete přihlásit.
 
-  menu:
-    menu: MENU
-    dashboard: Dashboard
-    logout: Odhlásit se
+  registrations:
+    buttons:
+      new: Nejste uživatelem? Zaregistrujte se!
+      submit: Odeslat registraci
+
+    notices:
+      create: Vaše registrace byla v pořádku přijata. Zkontrolujte Vaší poštu pro další instrukce.
+      already_registered: Nelze vytvořit novou registraci, pokud je uživatel přihlášen.
+      activate: Váš email byl v pořádku ověřen, děkujeme. Nyní se můžete přihlásit.
+      manual_approval_needed: Váš email byl v pořádku ověřen, děkujeme. Nyní prosím vyčkejte na schválení účtu našimi administrátory.
+
+    errors:
+      wrong_token: Token není správný a nebo vypršela jeho platnost.
+
+    labels:
+      terms_of_service: Odesláním registrace automaticky souhlasíte s %{tos_link}.
+      terms_label: podmínkami provozu
+      select_country: Zvolte Vaší zemi
