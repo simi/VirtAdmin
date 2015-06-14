@@ -1,5 +1,5 @@
-![Dependency startus](https://gemnasium.com/f7698bd38ca0cd10ad57fd50dc5a915f.svg)
-[![Build Status](https://travis-ci.org/Cervajz/VirtAdmin.svg?branch=master)](https://travis-ci.org/Cervajz/VirtAdmin)
+![Dependency status](https://gemnasium.com/f7698bd38ca0cd10ad57fd50dc5a915f.svg)
+[![Build Status](https://travis-ci.org/virtio/VirtAdmin.svg?branch=master)](https://travis-ci.org/virtio/VirtAdmin)
 ## THIS DOCUMENT IS WIP
 
 ### REQUIREMENTS
