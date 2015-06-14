@@ -32,7 +32,7 @@ class RegistrationsController < ApplicationController
 
     user.activate!
 
-    unless ApproveUserService.new(user).approve
+    unless ApproveUserService.new(user, request.remote_ip).approve
       flash[:info] = t 'registrations.notices.manual_approval_needed'
       redirect_to login_path
       return

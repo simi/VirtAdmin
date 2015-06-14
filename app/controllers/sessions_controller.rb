@@ -15,35 +15,26 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = login(params[:email], params[:password], params[:remember_me])
+    user = login params[:email], params[:password], params[:remember_me]
 
-    if @user
-      if Settings.app.maintenance_mode && !@user.admin?
-        logout
-        flash[:info] = t 'sessions.errors.maintenance_mode'
-        redirect_to maintenance_path
-        return
-      end
-
-      unless @user.approved?
-        logout
-        flash[:info] = t 'sessions.errors.not_approved'
-        redirect_to login_path
-        return
-      end
-
-      if @user.blocked?
-        logout
-        redirect_to login_path, alert: t('sessions.errors.blocked')
-        return
-      end
-
-      UserMailer.login_success(@user).deliver_later
+    case LoginUserService.new(user, params[:email]).login
+    when :successful
       redirect_to dashboard_path, notice: t('sessions.notices.login_successful')
-    else
-      user = User.find_by email: params[:email]
-      UserMailer.login_failed(user).deliver_later if user && user.activated? && user.approved?
+    when :failed
       redirect_to login_path, alert: t('sessions.errors.wrong_password')
+    when :maintenance
+      logout
+      flash[:info] = t 'sessions.errors.maintenance_mode'
+      redirect_to maintenance_path
+    when :blocked
+      logout
+      redirect_to login_path, alert: t('sessions.errors.blocked')
+    when :not_approved
+      logout
+      flash[:info] = t('sessions.errors.not_approved')
+      redirect_to login_path
+    else
+      redirect_to login_path
     end
   end
 
