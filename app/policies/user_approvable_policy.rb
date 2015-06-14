@@ -78,9 +78,25 @@ class UserApprovablePolicy
   end
 
   def load_default_data
-    @suspicious_names = Settings.users.defaults.suspicious_names.to_a.map(&:downcase)
-    @suspicious_countries = Settings.users.defaults.suspicious_countries.to_a.map(&:downcase)
-    @suspicious_ip_addresses = Settings.users.defaults.suspicious_ip_addresses.to_a.map(&:downcase)
-    @suspicious_emails = Settings.users.defaults.suspicious_emails.to_a.map(&:downcase)
+    @suspicious_names = default_suspicious_names
+    @suspicious_countries = default_suspicious_countries
+    @suspicious_ip_addresses = default_suspicious_ip_addresses
+    @suspicious_emails = default_suspicious_emails
+  end
+
+  def default_suspicious_names
+    Settings.users.defaults.suspicious_names.to_a.map(&:downcase)
+  end
+
+  def default_suspicious_countries
+    Settings.users.defaults.suspicious_countries.to_a.map(&:downcase)
+  end
+
+  def default_suspicious_ip_addresses
+    Settings.users.defaults.suspicious_ip_addresses.to_a.map(&:downcase)
+  end
+
+  def default_suspicious_emails
+    Settings.users.defaults.suspicious_emails.to_a.map(&:downcase)
   end
 end
