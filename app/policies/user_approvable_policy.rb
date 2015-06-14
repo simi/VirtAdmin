@@ -6,26 +6,13 @@ class UserApprovablePolicy
   attr_accessor :suspicious_ip_addresses
   attr_accessor :suspicious_emails
 
-  attr_reader :default_suspicious_names
-  attr_reader :default_suspicious_countries
-  attr_reader :default_suspicious_ip_addresses
-  attr_reader :default_suspicious_emails
-
   def initialize(user, ip_address=nil)
     @user = user
     @user_name = user.name.downcase.strip
     @rejection_reasons = []
     @ip_address = ip_address
 
-    @default_suspicious_names = Settings.users.defaults.suspicious_names.to_a.map(&:downcase)
-    @default_suspicious_countries = Settings.users.defaults.suspicious_countries.to_a.map(&:downcase)
-    @default_suspicious_ip_addresses = Settings.users.defaults.suspicious_ip_addresses.to_a.map(&:downcase)
-    @default_suspicious_emails = Settings.users.defaults.suspicious_emails.to_a.map(&:downcase)
-
-    @suspicious_names = @default_suspicious_names
-    @suspicious_countries = @default_suspicious_countries
-    @suspicious_ip_addresses = @default_suspicious_ip_addresses
-    @suspicious_emails = @default_suspicious_emails
+    load_default_data
   end
 
   def approvable?
@@ -88,5 +75,12 @@ class UserApprovablePolicy
     return true unless country_code
 
     @user.country.downcase == country_code.downcase
+  end
+
+  def load_default_data
+    @suspicious_names = Settings.users.defaults.suspicious_names.to_a.map(&:downcase)
+    @suspicious_countries = Settings.users.defaults.suspicious_countries.to_a.map(&:downcase)
+    @suspicious_ip_addresses = Settings.users.defaults.suspicious_ip_addresses.to_a.map(&:downcase)
+    @suspicious_emails = Settings.users.defaults.suspicious_emails.to_a.map(&:downcase)
   end
 end
