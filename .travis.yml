@@ -1,10 +1,9 @@
 language: ruby
-bundler_args: --without development --deployment --jobs=3 --retry=3
 cache: bundler
-addons:
-  postgresql: "9.4"
 rvm:
   - 2.2.2
+addons:
+  postgresql: "9.4"
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y libvirt-bin libvirt-dev qemu qemu-kvm
