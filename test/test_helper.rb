@@ -18,6 +18,7 @@ module ActiveSupport
 
     before do
       I18n.locale = :cs
+      Settings.app.default_locale = 'cs'
       Settings.app.maintenance_mode = false
     end
   end
