@@ -34,7 +34,6 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'faker'
-  gem 'simplecov'
 end
 
 group :test do
@@ -44,6 +43,7 @@ group :test do
   gem 'minitest-rails-capybara'
   gem 'factory_girl_rails'
   gem 'rake'
+  gem 'codeclimate-test-reporter', require: false
 end
 
 gem 'pg'

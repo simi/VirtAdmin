@@ -1,0 +1,8 @@
+languages:
+  Ruby: true
+  JavaScript: true
+  PHP: false
+  Python: false
+exclude_paths:
+- "app/assets/javascripts/theme/main.js"
+- "app/assets/javascripts/theme/utility.js"
