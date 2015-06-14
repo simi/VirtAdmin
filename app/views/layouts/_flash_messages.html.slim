@@ -1,6 +1,7 @@
 - flash.each do |key, value|
-  .alert.alert-border-left.alert-dismissable class=flash_alert_class(key)
+  - classes = flash_display_helper key
+  .alert.alert-border-left.alert-dismissable class="alert-#{classes[:alert_class]}"
     button type='button' class='close' data-dismiss='alert' aria-hidden='true'
       | ×
-    i.fa.pr10 class=flash_icon_class(key)
+    i.fa.pr10 class="fa-#{classes[:icon_class]}"
     = value
