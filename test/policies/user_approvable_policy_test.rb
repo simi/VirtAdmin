@@ -1,7 +1,6 @@
 require 'test_helper'
 
 describe UserApprovablePolicy do
-
   before do
     @user = FactoryGirl.build :user, name: 'John Doe'
     @database_available = File.exist? ClientInfo::GEOLITE2_DB

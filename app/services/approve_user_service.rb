@@ -1,5 +1,5 @@
 class ApproveUserService
-  def initialize(user, ip_address=nil)
+  def initialize(user, ip_address = nil)
     @user = user
     @ip_address = ip_address
   end

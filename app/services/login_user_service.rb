@@ -1,5 +1,5 @@
 class LoginUserService
-  def initialize(user, email=nil)
+  def initialize(user, email = nil)
     @user = user
     @email = email
   end
@@ -15,7 +15,7 @@ class LoginUserService
     return :blocked if @user.blocked?
 
     successful
-    return :successful
+    :successful
   end
 
   private

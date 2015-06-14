@@ -27,4 +27,3 @@ describe ApproveUserService do
     ApproveUserService.new(@user, '77.75.76.3').must_be :approve
   end
 end
-

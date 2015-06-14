@@ -3,6 +3,7 @@ AllCops:
     - 'db/schema.rb'
     - 'bin/*'
     - 'config/locales/countries.*.rb'
+    - 'lib/tasks/auto_annotate_models.rake'
 
 Style/StringLiterals:
   Enabled: false

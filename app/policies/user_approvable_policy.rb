@@ -6,7 +6,7 @@ class UserApprovablePolicy
   attr_accessor :suspicious_ip_addresses
   attr_accessor :suspicious_emails
 
-  def initialize(user, ip_address=nil)
+  def initialize(user, ip_address = nil)
     @user = user
     @user_name = user.name.downcase.strip
     @rejection_reasons = []
@@ -23,7 +23,7 @@ class UserApprovablePolicy
     @rejection_reasons << :suspicious_country if suspicious_country?
     @rejection_reasons << :suspicious_ip_address if suspicious_ip_address?
     @rejection_reasons << :suspicious_email if suspicious_email?
-    @rejection_reasons << :country_not_match if !country_match?
+    @rejection_reasons << :country_not_match unless country_match?
     @rejection_reasons << :previous_registration if Registration.find_by(email: @user.email)
 
     @rejection_reasons.count < 1
