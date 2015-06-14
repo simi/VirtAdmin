@@ -12,7 +12,7 @@ class ApproveUserService
 
     if Settings.users.manual_approval == 'auto'
       policy = UserApprovablePolicy.new(@user, @ip_address)
-      approve! if policy.approvable?
+      policy.approvable? ? approve! : disapprove!
     else
       approve!
     end
