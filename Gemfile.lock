@@ -339,6 +339,7 @@ DEPENDENCIES
   rails (= 4.2.1)
   rails-footnotes
   rails_config
+  rake
   roadie
   roadie-rails
   rubocop

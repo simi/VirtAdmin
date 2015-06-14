@@ -43,6 +43,7 @@ group :test do
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
   gem 'factory_girl_rails'
+  gem 'rake'
 end
 
 gem 'pg'
