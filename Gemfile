@@ -1,14 +1,13 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 
-gem 'rails', '4.2.2'
+gem 'rails', '4.2.4'
 
 gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 2.7.2'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -62,8 +61,12 @@ gem 'bootstrap-sass'
 gem 'roadie'
 gem 'roadie-rails'
 
-gem 'rails_config'
+gem 'config'
 gem 'paper_trail', '~> 4.0.0.rc'
 gem 'nestive'
 gem 'browser'
 gem 'maxminddb'
+
+group :production do
+  gem 'therubyracer', platforms: :ruby
+end

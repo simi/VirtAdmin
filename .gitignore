@@ -30,3 +30,4 @@ config/deploy.rb
 config/deploy/*
 
 coverage/
+.DS_Store
