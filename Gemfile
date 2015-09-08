@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.2.3'
 
 gem 'rails', '4.2.4'
 
@@ -36,12 +36,12 @@ group :development, :test do
 end
 
 group :test do
+  gem 'rake'
   gem 'minitest'
   gem 'minitest-reporters'
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
   gem 'factory_girl_rails'
-  gem 'rake'
   gem 'codeclimate-test-reporter', require: false
 end
 
