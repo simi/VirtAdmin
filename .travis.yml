@@ -1,12 +1,16 @@
+sudo: false
 language: ruby
 cache: bundler
 rvm:
-  - 2.2.2
+  - 2.2.3
 addons:
   postgresql: "9.4"
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install -y libvirt-bin libvirt-dev qemu qemu-kvm
+  apt:
+    packages:
+      - libvirt-bin
+      - libvirt-dev
+      - qemu
+      - qemu-kvm
 before_script:
   - wget -P lib/geolite/ http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz
   - gunzip -f lib/geolite/GeoLite2-City.mmdb.gz
