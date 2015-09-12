@@ -9,7 +9,7 @@
 
 ```
 postgres
-ruby 2.2.2
+ruby 2.2.3
 libvirt
 GeoLite2 database from MaxMind
 ```
